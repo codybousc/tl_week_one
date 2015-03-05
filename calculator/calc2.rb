@@ -2,14 +2,6 @@
 #ask whether they want to add, subtract, divide or multiply them
 #print out answer
 
-  
-
-
-
-
-
-
-
 begin
   puts "================================="
   puts "Please enter your first number!"
@@ -43,5 +35,3 @@ begin
   puts "Would you like to solve another problem? Enter (y/n)"
   answer = gets.chomp 
 end until answer != 'y'
-
-
