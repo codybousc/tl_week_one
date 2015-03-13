@@ -1,4 +1,3 @@
-#require 'pry'
 def calc_total(cards)
 arr = cards.map {|e| e[0]} 
 total = 0
@@ -19,8 +18,6 @@ end
 
 total
 end
-
-# binding.pry
 
 suit = ['Hearts', 'Diamonds', 'Spades', 'Clubs']
 cards = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King', 'Ace']
