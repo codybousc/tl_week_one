@@ -75,17 +75,17 @@ begin
       puts "Please enter 1 or 2"
     end
     if hit_or_stay == 1
-    my_cards << deck.pop
-    my_total = calc_total(my_cards)
-    puts "Your new card is a #{my_cards.last}"
-    puts "Your new total is: #{my_total}"
+      my_cards << deck.pop
+      my_total = calc_total(my_cards)
+      puts "Your new card is a #{my_cards.last}"
+      puts "Your new total is: #{my_total}"
     end
-      if calc_total(my_cards) > 21
-        abort("BUST! House wins!")
+    if calc_total(my_cards) > 21
+      abort("BUST! House wins!")
         
-      elsif calc_total(my_cards) == 21
-        abort("BLACKJACK! YOU WIN!")
-      end
+    elsif calc_total(my_cards) == 21
+      abort("BLACKJACK! YOU WIN!")
+    end
 end until hit_or_stay == 2
 
 #Dealer's Turn
@@ -95,20 +95,20 @@ puts "#{dealer_name}'s current total is #{calc_total(dealer_cards)}"
 begin
   
   if calc_total(dealer_cards) < 17
-      dealer_cards << deck.pop
-      puts ""
-      puts "#{dealer_name}'s new card is a #{dealer_cards.last}"
-      puts "#{dealer_name}'s new total is: #{calc_total(dealer_cards)}"
-      puts "==============================================================================="
+    dealer_cards << deck.pop
+    puts ""
+    puts "#{dealer_name}'s new card is a #{dealer_cards.last}"
+    puts "#{dealer_name}'s new total is: #{calc_total(dealer_cards)}"
+    puts "==============================================================================="
 
   end    
-    if calc_total(dealer_cards) > 21
-        abort("#{dealer_name} BUST! You win, #{name}!")
+  if calc_total(dealer_cards) > 21
+    abort("#{dealer_name} BUST! You win, #{name}!")
         
-      elsif calc_total(dealer_cards) == 21
-        abort("BLACKJACK! #{dealer_name} wins!!")
+  elsif calc_total(dealer_cards) == 21
+    abort("BLACKJACK! #{dealer_name} wins!!")
         
-      end
+  end
 end until calc_total(dealer_cards) >= 17
 
 #Compare Player & Dealer's Cards 
@@ -120,8 +120,3 @@ elsif calc_total(my_cards) > calc_total(dealer_cards)
 else
   puts "House wins!"
 end
-
-=begin
-ISSUES
-1) Needs a winning message function to get rid of repetitive code, but am unable to get it to work within the begin/end loops
-=end
